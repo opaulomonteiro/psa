@@ -1,0 +1,10 @@
+H:\psa\Exercicio_1Movies\PL.Models\obj\Debug\PL.Models.csprojResolveAssemblyReference.cache
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\PL.Models.dll.config
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\PL.Models.dll
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\PL.Models.pdb
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\EntityFramework.dll
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\EntityFramework.SqlServer.dll
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\EntityFramework.xml
+H:\psa\Exercicio_1Movies\PL.Models\bin\Debug\EntityFramework.SqlServer.xml
+H:\psa\Exercicio_1Movies\PL.Models\obj\Debug\PL.Models.dll
+H:\psa\Exercicio_1Movies\PL.Models\obj\Debug\PL.Models.pdb

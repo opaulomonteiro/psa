@@ -1,0 +1,14 @@
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\Exercicio_1Movies.exe.config
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\Exercicio_1Movies.exe
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\Exercicio_1Movies.pdb
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\EntityFramework.dll
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\EntityFramework.SqlServer.dll
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\PL.Models.dll
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\PL.Models.pdb
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\EntityFramework.xml
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\bin\Debug\EntityFramework.SqlServer.xml
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\obj\Debug\Exercicio_1Movies.csprojResolveAssemblyReference.cache
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\obj\Debug\Exercicio_1Movies.exe
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\obj\Debug\Exercicio_1Movies.pdb
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\obj\Debug\Exercicio_1Movies.Migrations.Criacao.resources
+H:\psa\Exercicio_1Movies\Exercicio_1Movies\obj\Debug\Exercicio_1Movies.csproj.GenerateResource.Cache
