@@ -13,35 +13,43 @@ namespace EFCodeFirstApp
         {
             #region - CRUD
 
-            //// crud - adiciona na um novo filme à coleção
-            ////        remove o primeiro filme do banco
-            ////        atualiza os dados de um filme
-            //using (var contexto = new MovieContext())
-            //{
-            //    var listaFilmes = contexto.Movies.ToList();
+            var movieDao = new MovieDao();
 
-            //    // insert
-            //    contexto.Movies.Add(new Movie()
-            //    {
-            //        Title = "Logan2",
-            //        Director = "James Mangold",
-            //        Rating = 8.5,
-            //        ReleaseDate = new DateTime(2017, 03, 24),
-            //        GenreID = 1
-            //    });
+            var movie1 = new Movie()
+            {
+                Title = "Logan",
+                Director = "James Mangold",
+                Rating = 8.5,
+                ReleaseDate = new DateTime(2017, 03, 24),
+                GenreID = 1
+            };
+            var movie2 = new Movie()
+            {
+                Title = "Tarzan",
+                Director = "Teste",
+                Rating = 6.5,
+                ReleaseDate = new DateTime(2017, 03, 24),
+                GenreID = 2
+            };
 
-            //    // edit
-            //    Movie batman = listaFilmes.Where(f => f.Title == "The Dark Knight").FirstOrDefault<Movie>();
-            //    if (batman != null)
-            //        batman.Title = "Batman - " + batman.Title;
+            movieDao.Add(movie1);
+            movieDao.Add(movie2);
 
-            //    // delete
-            //    contexto.Movies.Remove(listaFilmes.ElementAt<Movie>(0));
+            movie1.Rating = 6.5;
 
-            //    // persistir
-            //    contexto.Database.Log = Console.Write;
-            //    contexto.SaveChanges();
-            //}
+            movieDao.Update(movie1);
+
+
+            movieDao.Delete(movie2.ID);
+
+            var listaDeFilmes = movieDao.GetMovies();
+
+            Console.WriteLine("Todos os filmes: \n");
+            foreach (Movie movie in listaDeFilmes)
+            {
+                Console.WriteLine(movie.Title);
+
+            }
 
 
             //// lista todos os generos
@@ -217,28 +225,28 @@ namespace EFCodeFirstApp
             #endregion
 
             #region - consultas com casting
-            MovieContext cntx2 = new MovieContext();
+            //MovieContext cntx2 = new MovieContext();
 
-            Console.WriteLine("\nElenco de Star Wars");
-            var query9 = from p in cntx2.Characters.Include("Movie").Include("Actor")
-                         where p.Movie.Title == "Star Wars"
-                         select p;
+            //Console.WriteLine("\nElenco de Star Wars");
+            //var query9 = from p in cntx2.Characters.Include("Movie").Include("Actor")
+            //             where p.Movie.Title == "Star Wars"
+            //             select p;
 
-            foreach (var res in query9)
-            {
-                Console.WriteLine("\t{0}\t {1}", res.Character, res.Actor.Name);
-            }
+            //foreach (var res in query9)
+            //{
+            //    Console.WriteLine("\t{0}\t {1}", res.Character, res.Actor.Name);
+            //}
 
-            Console.WriteLine("\nAtores que desempenharam James Bond");
-            var query10 = from p in cntx2.Characters.Include("Movie").Include("Actor") 
-                         where p.Character == "James Bond"
-                         orderby p.Movie.ReleaseDate.Year
-                         select p;
+            //Console.WriteLine("\nAtores que desempenharam James Bond");
+            //var query10 = from p in cntx2.Characters.Include("Movie").Include("Actor") 
+            //             where p.Character == "James Bond"
+            //             orderby p.Movie.ReleaseDate.Year
+            //             select p;
 
-            foreach (var res in query10)
-            {
-                Console.WriteLine("\t{0}\t {1}\t {2}", res.Movie.ReleaseDate.Year, res.Actor.Name, res.Movie.Title);
-            }
+            //foreach (var res in query10)
+            //{
+            //    Console.WriteLine("\t{0}\t {1}\t {2}", res.Movie.ReleaseDate.Year, res.Actor.Name, res.Movie.Title);
+            //}
 
 
 

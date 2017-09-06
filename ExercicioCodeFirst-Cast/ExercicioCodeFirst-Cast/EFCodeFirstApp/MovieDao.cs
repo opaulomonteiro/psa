@@ -11,7 +11,7 @@ namespace EFCodeFirstApp
         {
             using (var contexto = new MovieContext())
             {
-                contexto.Database.Log = Console.Write;
+                //contexto.Database.Log = Console.Write;
                 contexto.Movies.Add(movie);
                 contexto.SaveChanges();
             }
@@ -21,7 +21,7 @@ namespace EFCodeFirstApp
         {
             using (var contexto = new MovieContext())
             {
-                contexto.Database.Log = Console.Write;
+                //contexto.Database.Log = Console.Write;
 
                 var movieToDelete = contexto.Movies.Find(movieId);  //GetMovies().ToList().Find(movie => movie.ID == movieId);
 
@@ -51,7 +51,7 @@ namespace EFCodeFirstApp
 
             using (var contexto = new MovieContext())
             {
-                contexto.Database.Log = Console.Write;
+                //contexto.Database.Log = Console.Write;
                 var listaFilmes = GetMovies().ToList();
 
                 findedMovie = listaFilmes.Find(movie => movie.ID == movieId);
@@ -65,7 +65,7 @@ namespace EFCodeFirstApp
             var listaFilmes = new List<Movie>();
             using (var contexto = new MovieContext())
             {
-                contexto.Database.Log = Console.Write;
+                //contexto.Database.Log = Console.Write;
                 listaFilmes = contexto.Movies.ToList();
             }
             return listaFilmes;
@@ -75,7 +75,7 @@ namespace EFCodeFirstApp
         {
             using (var contexto = new MovieContext())
             {
-                contexto.Database.Log = Console.Write;
+                //contexto.Database.Log = Console.Write;
                 var listaFilmes = GetMovies();
                 Movie movieFromDb = listaFilmes.Where(f => f.ID == movie.ID).First();
                 if (movieFromDb != null)
