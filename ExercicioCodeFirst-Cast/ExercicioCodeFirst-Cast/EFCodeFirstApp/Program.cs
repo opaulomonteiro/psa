@@ -14,6 +14,7 @@ namespace EFCodeFirstApp
             #region - CRUD
 
             var movieDao = new MovieDao();
+            var genreDao = new GeneroDao();
 
             var movie1 = new Movie()
             {
@@ -52,6 +53,9 @@ namespace EFCodeFirstApp
             }
 
 
+
+            //Console.WriteLine("Lista dos Generos: \n");
+            //var listaDeGeneros = genreDao.GetGeneros();
             //// lista todos os generos
             //using (var contexto = new MovieContext())
             //{

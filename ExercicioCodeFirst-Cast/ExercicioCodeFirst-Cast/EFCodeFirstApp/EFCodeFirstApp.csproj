@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneroDao.cs" />
     <Compile Include="Migrations\201704042259341_Criacao.cs" />
     <Compile Include="Migrations\201704042259341_Criacao.Designer.cs">
       <DependentUpon>201704042259341_Criacao.cs</DependentUpon>

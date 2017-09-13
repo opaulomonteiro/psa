@@ -52,6 +52,7 @@
     <Compile Include="Actor.cs" />
     <Compile Include="ActorMovie.cs" />
     <Compile Include="Genre.cs" />
+    <Compile Include="IGeneroDAO.cs" />
     <Compile Include="IMovieDAO.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="MovieContext.cs" />
