@@ -11,7 +11,6 @@ namespace EFCodeFirstApp
         {
             using (var contexto = new MovieContext())
             {
-                //contexto.Database.Log = Console.Write;
                 contexto.Movies.Add(movie);
                 contexto.SaveChanges();
             }
@@ -19,24 +18,35 @@ namespace EFCodeFirstApp
 
         public void Delete(int movieId)
         {
-            using (var contexto = new MovieContext())
+            try
             {
-                //contexto.Database.Log = Console.Write;
-
-                var movieToDelete = contexto.Movies.Find(movieId);  //GetMovies().ToList().Find(movie => movie.ID == movieId);
-
-                if (movieToDelete != null)
+                using (var contexto = new MovieContext())
                 {
-                   //contexto.Movies.Attach(movieToDelete);
-                    contexto.Movies.Remove(movieToDelete);
 
-                    contexto.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("Não achou o filme na base");
-                }
+                    #region Solução com acesso ao banco para buscar a Lista de Movies
+                        // var movieToDelete = contexto.Movies.Find(movieId); 
+                        //if (movieToDelete != null)
+                        //{                   
+                        //    contexto.Movies.Remove(movieToDelete);
+                        //    contexto.SaveChanges();
+                        //}
+                        //else
+                        //{
+                        //    throw new Exception("Não achou o filme na base");
+                        //}
+                    #endregion
 
+                    #region Solução sem acesso ao banco para buscar a Lista de Movies
+                        var movieToDelete = new Movie() { ID = movieId };
+                        contexto.Movies.Attach(movieToDelete);
+                        contexto.Movies.Remove(movieToDelete);
+                        contexto.SaveChanges();
+                    #endregion
+                }
+            }
+            catch
+            {
+                Console.Write("Ocorreu um erro ao tentar deletar o filme com ID " + movieId);
             }
         }
 
@@ -51,7 +61,6 @@ namespace EFCodeFirstApp
 
             using (var contexto = new MovieContext())
             {
-                //contexto.Database.Log = Console.Write;
                 var listaFilmes = GetMovies().ToList();
 
                 findedMovie = listaFilmes.Find(movie => movie.ID == movieId);
@@ -65,7 +74,6 @@ namespace EFCodeFirstApp
             var listaFilmes = new List<Movie>();
             using (var contexto = new MovieContext())
             {
-                //contexto.Database.Log = Console.Write;
                 listaFilmes = contexto.Movies.ToList();
             }
             return listaFilmes;
@@ -75,7 +83,6 @@ namespace EFCodeFirstApp
         {
             using (var contexto = new MovieContext())
             {
-                //contexto.Database.Log = Console.Write;
                 var listaFilmes = GetMovies();
                 Movie movieFromDb = listaFilmes.Where(f => f.ID == movie.ID).First();
                 if (movieFromDb != null)
