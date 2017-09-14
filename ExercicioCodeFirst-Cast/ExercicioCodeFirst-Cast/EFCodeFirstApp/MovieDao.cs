@@ -55,6 +55,20 @@ namespace EFCodeFirstApp
            
         }
 
+        public IEnumerable<Movie> FindMovieByGenre(string genreTitle)
+        {
+            var findedMovies = new List<Movie>();
+
+            using (var contexto = new MovieContext())
+            {
+                var listaFilmes = GetMovies().ToList();
+
+                findedMovies = listaFilmes.FindAll(movie => movie.Genre.Name == genreTitle);
+            }
+
+            return findedMovies;
+        }
+
         public Movie GetMovieByID(int movieId)
         {
             var findedMovie = new Movie();

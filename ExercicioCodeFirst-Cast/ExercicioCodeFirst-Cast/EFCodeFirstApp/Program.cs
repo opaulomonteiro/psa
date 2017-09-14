@@ -54,20 +54,23 @@ namespace EFCodeFirstApp
 
 
 
-            //Console.WriteLine("Lista dos Generos: \n");
-            //var listaDeGeneros = genreDao.GetGeneros();
-            //// lista todos os generos
-            //using (var contexto = new MovieContext())
-            //{
-            //    //contexto.Database.Log = Console.Write;
+            Console.WriteLine("\n Lista dos Generos: \n");
+            var listaDeGeneros = genreDao.GetGeneros();
 
-            //    Console.WriteLine("Todos os generos");
-            //    foreach (Genre genero in contexto.Genres)
-            //    {
-            //        Console.WriteLine("{0} \t {1}", genero.GenreID, genero.Name);
+            foreach (Genre movie in listaDeGeneros)
+            {
+                Console.WriteLine(movie.Name);
 
-            //    }
-            //}
+            }
+
+            Console.WriteLine("Busca filmes com genero Action");
+            var listaDeFilmesComGeneroAction = movieDao.FindMovieByGenre("Action");
+
+            foreach (Movie movie in listaDeFilmesComGeneroAction)
+            {
+                Console.WriteLine(movie.Title);
+
+            }
 
             //Console.WriteLine("\n");
             //// lista todos os filmes do genero "Action"

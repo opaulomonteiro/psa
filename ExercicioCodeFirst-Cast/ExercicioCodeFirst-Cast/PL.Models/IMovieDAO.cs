@@ -10,5 +10,6 @@ namespace PL.Models
         void Add(Movie movie);
         void Delete(int movieId);
         void Update(Movie movie);
+        IEnumerable<Movie> FindMovieByGenre(String genreTitle);
     }
 }
